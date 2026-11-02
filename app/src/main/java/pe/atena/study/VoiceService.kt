@@ -82,7 +82,10 @@ class VoiceService : Service(), RecognitionListener, TextToSpeech.OnInitListener
         .setContentText("Escucha por turnos; comandos YAYA, REPITE y MÁS LENTO")
         .setSmallIcon(android.R.drawable.ic_btn_speak_now)
         .setOnlyAlertOnce(true)
-        .setSilent(true)
+        .setSmallIcon(android.R.drawable.ic_btn_speak_now)
+.setOnlyAlertOnce(true)
+.setContentIntent(
+
         .setContentIntent(
             PendingIntent.getActivity(
                 this, 0, Intent(this, MainActivity::class.java),
