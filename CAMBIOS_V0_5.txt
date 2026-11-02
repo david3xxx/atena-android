@@ -1,0 +1,20 @@
+ATENA v0.5 - Cambios solicitados
+
+- Voz: admite RESPONDE y RESPONDER, así como MAS LENTO/MAS DESPACIO.
+- Más lento: reduce la velocidad 0.15 por orden y repite el último bloque de tres palabras.
+- Micrófono: tras pulsar RESPONDER, activa también el servicio de escucha (si hay permiso).
+- Evita cancelar y reiniciar el reconocimiento antes de cada sesión (reducción de ciclos superfluos).
+- Notificaciones ATENA sin sonido ni vibración.
+
+LIMITACIONES IMPORTANTES:
+- El servicio SpeechRecognizer del sistema Android puede emitir sonidos propios al abrir/cerrar sesiones. La app no tiene control garantizado sobre esos sonidos.
+- El micrófono no permanece grabando de forma ininterrumpida: escucha por turnos y se reinicia después de cada resultado o error, con interrupciones normales del sistema.
+- Esta demo NO conecta a ChatGPT; las respuestas todavía son locales, no generativas.
+- Esta versión no ha sido compilada con el SDK Android real ni probada en el Samsung del usuario; se comprobó sintaxis Kotlin con stubs.
+- Para actualizar desde otro APK debug firmado por un runner efímero de GitHub, puede requerirse desinstalar v0.4 (firmas diferentes).
+
+ARCHIVOS MODIFICADOS:
+app/src/main/java/pe/atena/study/VoiceService.kt
+app/src/main/java/pe/atena/study/MainActivity.kt
+app/build.gradle.kts
+.github/workflows/build-apk.yml

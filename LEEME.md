@@ -1,4 +1,4 @@
-# ATENA DEMO GRATIS v0.4 — Código Android para compilar
+# ATENA DEMO GRATIS v0.5 — Código Android para compilar
 
 **NO ES UN APK PRECOMPILADO.** Es código de una demostración Android, con un sistema de compilación automática mediante GitHub Actions. No está validado en ningún teléfono. También incluye una demo web que puedes abrir y probar ahora mismo sin compilar.
 
@@ -51,3 +51,7 @@ Usa solamente un repositorio que controles. El uso de GitHub Actions depende de 
 - [ ] La aplicación Android **no** se ha compilado aquí: faltan Android SDK, Gradle y acceso a descargas en el entorno.
 - [ ] No se ha instalado ni ensayado en un teléfono físico.
 - [ ] La autenticación oficial Sign in with ChatGPT está pendiente; no está simulada como si ya existiera.
+
+
+## Prueba v0.5
+Incluye mejor reconocimiento de los comandos de voz y reducción de reinicios innecesarios. **No garantiza suprimir los pitidos del servicio de reconocimiento instalado por Android**, ni escucha física ininterrumpida. No se conecta a ChatGPT. Consulta CAMBIOS_V0_5.txt.

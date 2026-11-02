@@ -6,8 +6,8 @@ android {
     applicationId = "pe.atena.study.demo"
     minSdk = 29
     targetSdk = 35
-    versionCode = 4
-    versionName = "0.4-demo"
+    versionCode = 5
+    versionName = "0.5-demo"
   }
   compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
   kotlinOptions { jvmTarget = "17" }

@@ -27,7 +27,7 @@ class MainActivity : Activity() {
         fun btn(t: String, cb: () -> Unit) {
             col.addView(Button(this).apply { text = t; setOnClickListener { cb() } })
         }
-        label("ATENA · DEMOSTRACIÓN GRATUITA", true)
+        label("ATENA · DEMO V0.5", true)
         label("Prueba el dictado de tres palabras y los comandos. Esta versión NO se conecta a ChatGPT ni utiliza una API de pago.")
         label("Selecciona un curso de prueba:")
         course = Spinner(this).apply { adapter = ArrayAdapter(this@MainActivity, android.R.layout.simple_spinner_dropdown_item, labels) }
@@ -37,13 +37,13 @@ class MainActivity : Activity() {
         label("Escribe una pregunta o usa el micrófono:")
         question = EditText(this).apply { hint = "¿Por qué es importante relajar al paciente durante la palpación?"; minLines = 3 }
         col.addView(question)
-        btn("RESPONDER PREGUNTA DE PRUEBA") {
+        btn("RESPONDER PREGUNTA") {
             val q = question.text.toString().ifBlank { "¿Por qué es importante relajar al paciente durante la palpación?" }
             val i = Intent(this, VoiceService::class.java).setAction(VoiceService.MANUAL)
             i.putExtra("text", q)
             i.putExtra("course", course.selectedItemPosition)
             startService(i)
-            status.text = "Respuesta de demostración solicitada. Avanza con YAYA."
+            status.text = "Respuesta de demostración solicitada. Di YAYA, REPITE o MÁS LENTO."
         }
         btn("YAYA · SIGUIENTES TRES PALABRAS") { cmd("yaya") }
         btn("REPITE / NO ENTENDÍ") { cmd("no entendi") }
@@ -70,6 +70,6 @@ class MainActivity : Activity() {
         val i = Intent(this, VoiceService::class.java).setAction(VoiceService.START)
             .putExtra("course", course.selectedItemPosition)
         startForegroundService(i)
-        status.text = "Escucha solicitada. Prueba: 'Modo abierta', tu pregunta y 'Responde'."
+        status.text = "Escucha solicitada. Di tu pregunta y luego 'RESPONDE' o 'RESPONDER'."
     }
 }
